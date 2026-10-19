@@ -38,6 +38,7 @@ extern "C" {
 #define CONFIG_BAT_NCELLS 2
 
 #define CONFIG_M17
+#define CONFIG_MIC_GAIN 4
 
 /**
  * BK4819 and BK1080 device instances. Pin numbers must be kept in sync

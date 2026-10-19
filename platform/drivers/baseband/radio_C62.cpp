@@ -211,9 +211,9 @@ void radio_init(const rtxStatus_t *rtxState)
     bk4819_set_Squelch(&c62_bk4819, 0, 0, 0x7f, 0x7f, 0xff, 0xff);
 
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_VHF_RX_LNA,
-                        false); // VHF RX LNA
+                        true);  // VHF RX LNA
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_UHF_RX_LNA,
-                        false); // UHF RX LNA
+                        true);  // UHF RX LNA
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_VHF_TX_PA,
                         false); // VHF TX PA
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_UHF_TX_PA,
@@ -299,10 +299,10 @@ void radio_setRxFilters(uint32_t freq)
 {
     if (freq < 174000000) {
         bk4819_gpio_pin_set(&c62_bk4819, GPIO_VHF_RX_LNA,
-                            true); // VHF RX LNA
+                            false); // VHF RX LNA
     } else {
         bk4819_gpio_pin_set(&c62_bk4819, GPIO_UHF_RX_LNA,
-                            true); // UHF RX LNA
+                            false); // UHF RX LNA
     }
 }
 
@@ -378,9 +378,9 @@ void radio_disableRtx()
     bk4819_disable_ctdcss(&c62_bk4819);
 
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_VHF_RX_LNA,
-                        false); // VHF RX LNA
+                        true);  // VHF RX LNA
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_UHF_RX_LNA,
-                        false); // UHF RX LNA
+                        true);  // UHF RX LNA
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_VHF_TX_PA,
                         false); // VHF TX PA
     bk4819_gpio_pin_set(&c62_bk4819, GPIO_UHF_TX_PA,
